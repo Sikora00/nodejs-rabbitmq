@@ -1,19 +1,29 @@
-import { Controller, Get, Inject } from '@nestjs/common';
-import {ClientProxy, EventPattern} from '@nestjs/microservices';
-
-import { AppService } from './app.service';
+import {Controller, Get} from '@nestjs/common';
+import {AmqpConnection, RabbitSubscribe} from "@golevelup/nestjs-rabbitmq";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService,   @Inject('RABBIT_CONSUMERS') private client: ClientProxy,) {}
+  constructor(private readonly amqpConnection: AmqpConnection) {}
 
   @Get()
   getData() {
-    return this.client.send({cmd: 'GetSites'}, {})
+    return this.amqpConnection.request({
+      exchange: 'exchange1',
+      routingKey: 'GetSites',
+      payload: {
+        request: 'val',
+      }
+    });
   }
 
-  @EventPattern('SiteCreated')
-  async handleUserCreated(data: Record<string, unknown>) {
-    console.log(data)
+  @Get('user')
+  getUserData() {
+    return this.amqpConnection.request({
+      exchange: 'exchange1',
+      routingKey: 'GetUsers',
+      payload: {
+        request: 'val',
+      }
+    });
   }
 }

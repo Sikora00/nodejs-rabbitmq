@@ -1,11 +1,9 @@
 import {AppService} from './app.service';
-import {EventPattern} from "@nestjs/microservices";
+import {RabbitSubscribe} from "@golevelup/nestjs-rabbitmq";
+import {Controller} from "@nestjs/common";
 
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @EventPattern('SiteCreated')
-  async handleUserCreated(data: Record<string, unknown>) {
-    console.log(data)
-  }
 }

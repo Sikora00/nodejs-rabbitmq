@@ -1,19 +1,13 @@
 import {Controller, Get, Inject, Post} from '@nestjs/common';
-
-import { AppService } from './app.service';
-import {ClientProxy, MessagePattern} from "@nestjs/microservices";
+import {AmqpConnection, RabbitRPC} from "@golevelup/nestjs-rabbitmq";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService,   @Inject('RABBIT_CONSUMERS') private client: ClientProxy,) {}
+  constructor(private readonly amqpConnection: AmqpConnection) {}
 
   @Post()
   createSite(): Promise<void> {
-    this.client.emit('SiteCreated', {name: 'Site2'}).subscribe();
-    return Promise.resolve()
+    return this.amqpConnection.publish('exchange1', 'subscribe-route', { msg: 'hello world' });
   }
-  @MessagePattern({cmd: 'GetSites'})
-  getData() {
-    return ['Site1']
-  }
+
 }
