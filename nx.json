@@ -25,6 +25,24 @@
   "projects": {
     "one": {
       "tags": []
+    },
+    "two": {
+      "tags": []
+    },
+    "three": {
+      "tags": []
+    },
+    "five": {
+      "tags": []
+    },
+    "six": {
+      "tags": []
+    },
+    "seven": {
+      "tags": []
+    },
+    "nest-rabbit-client": {
+      "tags": []
     }
   }
 }

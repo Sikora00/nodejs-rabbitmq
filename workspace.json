@@ -50,6 +50,277 @@
           }
         }
       }
+    },
+    "two": {
+      "root": "apps/two",
+      "sourceRoot": "apps/two/src",
+      "projectType": "application",
+      "prefix": "two",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/two",
+            "main": "apps/two/src/main.ts",
+            "tsConfig": "apps/two/tsconfig.app.json",
+            "assets": ["apps/two/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/two/src/environments/environment.ts",
+                  "with": "apps/two/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "two:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/two/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/two/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "three": {
+      "root": "apps/three",
+      "sourceRoot": "apps/three/src",
+      "projectType": "application",
+      "prefix": "three",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/three",
+            "main": "apps/three/src/main.ts",
+            "tsConfig": "apps/three/tsconfig.app.json",
+            "assets": ["apps/three/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/three/src/environments/environment.ts",
+                  "with": "apps/three/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "three:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/three/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/three/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "five": {
+      "root": "apps/five",
+      "sourceRoot": "apps/five/src",
+      "projectType": "application",
+      "prefix": "five",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/five",
+            "main": "apps/five/src/main.ts",
+            "tsConfig": "apps/five/tsconfig.app.json",
+            "assets": ["apps/five/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/five/src/environments/environment.ts",
+                  "with": "apps/five/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "five:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/five/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/five/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "six": {
+      "root": "apps/six",
+      "sourceRoot": "apps/six/src",
+      "projectType": "application",
+      "prefix": "six",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/six",
+            "main": "apps/six/src/main.ts",
+            "tsConfig": "apps/six/tsconfig.app.json",
+            "assets": ["apps/six/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/six/src/environments/environment.ts",
+                  "with": "apps/six/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "six:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/six/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/six/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "seven": {
+      "root": "apps/seven",
+      "sourceRoot": "apps/seven/src",
+      "projectType": "application",
+      "prefix": "seven",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/seven",
+            "main": "apps/seven/src/main.ts",
+            "tsConfig": "apps/seven/tsconfig.app.json",
+            "assets": ["apps/seven/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/seven/src/environments/environment.ts",
+                  "with": "apps/seven/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "seven:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/seven/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/seven/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-rabbit-client": {
+      "root": "libs/nest-rabbit-client",
+      "sourceRoot": "libs/nest-rabbit-client/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nest-rabbit-client/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-rabbit-client/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
